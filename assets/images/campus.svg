@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="60%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#93C5FD"/>
+    </linearGradient>
+    <linearGradient id="bldgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="50%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0369A1" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D9822B"/>
+      <stop offset="100%" stop-color="#F5AB48"/>
+    </linearGradient>
+    <linearGradient id="lawnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#15803D"/>
+      <stop offset="100%" stop-color="#166534"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="675" fill="url(#skyGrad)"/>
+
+  <!-- Clouds -->
+  <circle cx="200" cy="120" r="50" fill="#FFFFFF" opacity="0.3"/>
+  <circle cx="250" cy="110" r="60" fill="#FFFFFF" opacity="0.3"/>
+  <circle cx="300" cy="120" r="45" fill="#FFFFFF" opacity="0.3"/>
+
+  <circle cx="950" cy="140" r="60" fill="#FFFFFF" opacity="0.25"/>
+  <circle cx="1010" cy="130" r="70" fill="#FFFFFF" opacity="0.25"/>
+
+  <!-- Main College Building -->
+  <!-- Left Wing -->
+  <rect x="250" y="240" width="220" height="260" fill="url(#bldgGrad)" rx="8"/>
+  <!-- Central Grand Facade -->
+  <rect x="440" y="180" width="320" height="320" fill="#FFFFFF" rx="10"/>
+  <!-- Right Wing -->
+  <rect x="730" y="240" width="220" height="260" fill="url(#bldgGrad)" rx="8"/>
+
+  <!-- Roof Top Architecture & Signboard -->
+  <rect x="420" y="160" width="360" height="35" fill="#0A1E3F" rx="4"/>
+  <text x="600" y="184" fill="url(#goldGrad)" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle" letter-spacing="2">SWAMI VIVEKANANDA COLLEGE OF EDUCATION</text>
+
+  <!-- Glass Windows Matrix -->
+  <!-- Center Main Glass -->
+  <rect x="480" y="220" width="240" height="180" fill="url(#glassGrad)" rx="6"/>
+  <!-- Glass Window Panes -->
+  <line x1="560" y1="220" x2="560" y2="400" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="640" y1="220" x2="640" y2="400" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="480" y1="280" x2="720" y2="280" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="480" y1="340" x2="720" y2="340" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- Left Windows -->
+  <rect x="280" y="270" width="60" height="50" fill="url(#glassGrad)" rx="4"/>
+  <rect x="370" y="270" width="60" height="50" fill="url(#glassGrad)" rx="4"/>
+  <rect x="280" y="340" width="60" height="50" fill="url(#glassGrad)" rx="4"/>
+  <rect x="370" y="340" width="60" height="50" fill="url(#glassGrad)" rx="4"/>
+
+  <!-- Right Windows -->
+  <rect x="770" y="270" width="60" height="50" fill="url(#glassGrad)" rx="4"/>
+  <rect x="860" y="270" width="60" height="50" fill="url(#glassGrad)" rx="4"/>
+  <rect x="770" y="340" width="60" height="50" fill="url(#glassGrad)" rx="4"/>
+  <rect x="860" y="340" width="60" height="50" fill="url(#glassGrad)" rx="4"/>
+
+  <!-- Grand Pillars Entrance -->
+  <rect x="480" y="420" width="24" height="80" fill="#0A1E3F"/>
+  <rect x="550" y="420" width="24" height="80" fill="#0A1E3F"/>
+  <rect x="626" y="420" width="24" height="80" fill="#0A1E3F"/>
+  <rect x="696" y="420" width="24" height="80" fill="#0A1E3F"/>
+  <rect x="460" y="490" width="280" height="15" fill="#CBD5E1"/>
+
+  <!-- Green Lawns & Campus Pathway -->
+  <rect x="0" y="500" width="1200" height="175" fill="url(#lawnGrad)"/>
+  
+  <!-- Campus Walkway -->
+  <polygon points="500,500 700,500 850,675 350,675" fill="#E2E8F0"/>
+
+  <!-- Decorative Palm Trees & Shrubs -->
+  <circle cx="160" cy="480" r="50" fill="#15803D"/>
+  <circle cx="210" cy="490" r="40" fill="#166534"/>
+  <rect x="155" y="480" width="10" height="60" fill="#78350F"/>
+
+  <circle cx="1040" cy="480" r="50" fill="#15803D"/>
+  <circle cx="990" cy="490" r="40" fill="#166534"/>
+  <rect x="1035" y="480" width="10" height="60" fill="#78350F"/>
+
+  <!-- Badge Overlay -->
+  <rect x="40" y="40" width="340" height="70" rx="8" fill="#061226" opacity="0.85"/>
+  <text x="60" y="70" fill="#F5AB48" font-family="Arial, sans-serif" font-weight="bold" font-size="16">SWAMI VIVEKANANDA COLLEGE</text>
+  <text x="60" y="92" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12">Aurangabad, Keshiary • Paschim Medinipur</text>
+</svg>
