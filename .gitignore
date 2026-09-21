@@ -3,3 +3,9 @@ Thumbs.db
 *.log
 .vscode/
 .idea/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+

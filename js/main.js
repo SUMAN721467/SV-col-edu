@@ -1,5 +1,5 @@
 /**
- * Swami Vivekananda College of Education - Main UI & Global Script
+ * Swami Vibekananda College of Education - Main UI & Global Script
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -123,7 +123,7 @@ function initModals() {
           <p style="font-size: 0.9rem; color: #D9822B; font-weight: 600;">Date of Notification: ${doc.date}</p>
         </div>
         <div style="background: #F8FAFD; padding: 1.25rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem;">
-          <p><strong>Institution:</strong> Swami Vivekananda College of Education</p>
+          <p><strong>Institution:</strong> Swami Vibekananda College of Education</p>
           <p><strong>Approved Intake:</strong> ${doc.intake} Students</p>
           <p><strong>Effective Session:</strong> ${doc.session}</p>
           <p><strong>Governing Regulations:</strong> ${doc.regulations}</p>
@@ -148,7 +148,7 @@ function initModals() {
           <p style="font-size: 0.9rem; color: #D9822B; font-weight: 600;">Date: ${doc.date}</p>
         </div>
         <div style="background: #F8FAFD; padding: 1.25rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem;">
-          <p><strong>Institution:</strong> Swami Vivekananda College of Education (Under Sahid Khudiram Memorial Trust)</p>
+          <p><strong>Institution:</strong> Swami Vibekananda College of Education (Under Sahid Khudiram Memorial Trust)</p>
           <p><strong>Approved Intake:</strong> ${doc.intake}</p>
           <p><strong>Academic Commencement:</strong> ${doc.session}</p>
         </div>
@@ -247,7 +247,7 @@ function initContactForm() {
       submitBtn.disabled = true;
 
       setTimeout(() => {
-        alert('Thank you! Your message/inquiry has been received by the Swami Vivekananda College of Education Administrative Office. We will get back to you shortly.');
+        alert('Thank you! Your message/inquiry has been received by the Swami Vibekananda College of Education Administrative Office. We will get back to you shortly.');
         contactForm.reset();
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;

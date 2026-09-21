@@ -1,6 +1,6 @@
-# Swami Vivekananda College of Education (SVCE) - Official Web Portal
+# Swami Vibekananda College of Education (SVCE) - Official Web Portal
 
-Official institutional website and Mandatory Disclosure portal for **Swami Vivekananda College of Education**, Aurangabad, Keshiary, Paschim Medinipur, West Bengal - 721133.
+Official institutional website and Mandatory Disclosure portal for **Swami Vibekananda College of Education**, Aurangabad, Keshiary, Paschim Medinipur, West Bengal - 721133.
 
 Managed by **Sahid Khudiram Memorial Trust**.
 
@@ -26,13 +26,46 @@ Managed by **Sahid Khudiram Memorial Trust**.
 ├── mandatory-disclosure.html  # Statutory & Regulatory Disclosures
 ├── gallery.html               # Campus Infrastructure & Lab Gallery
 ├── contact.html               # Campus Address & Inquiry Form
+├── admin-login.html          # Admin Login Portal (Supabase Auth)
+├── admin-dashboard.html      # Administrative Control Panel
+├── env.example.js            # Environment Variables Template
 ├── css/
 │   ├── style.css              # Master Design System & Responsive Variables
 │   └── components.css         # UI Components, Tables, Modals, Forms
 ├── js/
+│   ├── env.js                 # Local Environment Config (Git-ignored)
+│   ├── supabase-config.js     # Supabase Client Initialization
 │   ├── data.js                # Structured Datasets
 │   ├── main.js                # Navigation, Modals, Tickers
 │   └── tables.js              # Table Search, Filter, Pagination & Export
 └── assets/
-    └── images/                # Vector Graphics & Visuals
+    ├── images/                # Vector Graphics, Vivekananda Emblem & Campus Photo
+    └── pdf/                   # 9 Signed Official PDF Documents
 ```
+
+---
+
+## 🚀 Quick Start (Node.js & TypeScript)
+
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Start local development server
+npm run dev
+
+# 3. Build production bundle
+npm run build
+```
+
+---
+
+## 🔐 Supabase Database & Admin Authentication
+1. Open [`.env`](file:///c:/Users/hp/OneDrive/Desktop/sv%20col%20edu/.env) at the root of the project.
+2. Enter your live Supabase credentials:
+```env
+VITE_SUPABASE_URL=https://YOUR_PROJECT_ID.supabase.co
+VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+```
+3. The `.env` file is automatically ignored by Git in [`.gitignore`](file:///c:/Users/hp/OneDrive/Desktop/sv%20col%20edu/.gitignore) for security.
+4. [`src/services/supabase.ts`](file:///c:/Users/hp/OneDrive/Desktop/sv%20col%20edu/src/services/supabase.ts) automatically initializes the Supabase client.

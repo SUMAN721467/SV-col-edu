@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-navy: #0A1E3F;
+    --primary-dark: #061226;
+    --accent-gold: #D9822B;
+    --accent-gold-light: #F4A247;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F8FAFD;
+    color: #1E293B;
+  }
+}
+
+@layer components {
+  .btn-gold {
+    @apply bg-gold-gradient text-navy-dark font-bold text-sm px-5 py-2 rounded-lg inline-flex items-center justify-center gap-2 shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-gold-lg;
+  }
+
+  .btn-outline-navy {
+    @apply bg-white/10 text-white font-semibold text-sm px-5 py-2 rounded-lg border border-white/20 inline-flex items-center justify-center gap-2 transition-all duration-300 hover:bg-white/20 hover:border-white;
+  }
+
+  .btn-secondary-custom {
+    @apply bg-surface-main border border-slate-300 text-slate-700 font-semibold text-xs sm:text-sm px-3 py-1.5 rounded-md inline-flex items-center gap-1.5 transition-all duration-200 hover:bg-surface-alt hover:border-slate-400;
+  }
+
+  .accred-pill {
+    @apply flex items-center gap-2 px-2.5 py-1 bg-surface-main border border-slate-200 rounded-lg text-left;
+  }
+
+  .badge-category {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider whitespace-nowrap;
+  }
+
+  .badge-gen { @apply bg-sky-100 text-sky-800 border border-sky-200; }
+  .badge-sc { @apply bg-red-100 text-red-800 border border-red-200; }
+  .badge-st { @apply bg-amber-100 text-amber-800 border border-amber-200; }
+  .badge-obc { @apply bg-emerald-100 text-emerald-800 border border-emerald-200; }
+
+  .custom-table {
+    @apply w-full text-left text-sm border-collapse min-w-[620px];
+  }
+
+  .custom-table th {
+    @apply bg-navy text-white px-3.5 py-2.5 font-bold text-xs uppercase tracking-wider whitespace-nowrap;
+  }
+
+  .custom-table td {
+    @apply px-3.5 py-2.5 border-b border-slate-200 text-slate-800 align-middle;
+  }
+
+  .custom-table tbody tr:hover {
+    @apply bg-slate-50;
+  }
+}
+
+/* Marquee scrolling animation */
+@keyframes tickerScroll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+.animate-ticker {
+  display: inline-block;
+  padding-left: 100%;
+  animation: tickerScroll 55s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Custom smooth scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}

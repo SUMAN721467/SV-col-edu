@@ -1,18 +1,18 @@
 /**
- * Swami Vivekananda College of Education - Official Institutional Data
+ * Swami Vibekananda College of Education - Official Institutional Data
  * Sourced from NCTE & WBBPE Gazettes, Staff Rosters, and University Admission Lists
  */
 
 const SVCE_DATA = {
   college: {
-    name: "Swami Vivekananda College of Education",
+    name: "Swami Vibekananda College of Education",
     shortName: "SVCE",
     bengaliName: "স্বামী বিবেকানন্দ কলেজ অফ এডুকেশন",
     managedBy: "Sahid Khudiram Memorial Trust",
     establishedYear: 2013,
     category: "Self-Financed Co-Educational Teacher Training Institution",
     president: "Hiranmoy Jana",
-    principal: "Dr. Subhas Chandra Maity",
+    principal: "Subhas Chandra Maity",
     address: {
       plotNo: "Plot No. L.R.-1859, R.S.-1530",
       village: "Vill.-Aurangabad",

@@ -1,5 +1,5 @@
 /**
- * Swami Vivekananda College of Education - Tables & Data Rendering Script
+ * Swami Vibekananda College of Education - Tables & Data Rendering Script
  */
 
 document.addEventListener('DOMContentLoaded', () => {
