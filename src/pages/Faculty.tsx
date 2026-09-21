@@ -89,7 +89,7 @@ export const Faculty: React.FC<FacultyProps> = ({ onNavigate }) => {
               }`}
             >
               <i className="fa-solid fa-graduation-cap text-gold"></i>
-              <span>B.Ed Faculty Roster ({BED_FACULTY.length})</span>
+              <span>B.Ed Faculty Roster ({bedFaculty.length})</span>
             </button>
 
             <button
@@ -101,7 +101,7 @@ export const Faculty: React.FC<FacultyProps> = ({ onNavigate }) => {
               }`}
             >
               <i className="fa-solid fa-chalkboard-user text-gold"></i>
-              <span>D.El.Ed Faculty Roster ({DELED_FACULTY.length})</span>
+              <span>D.El.Ed Faculty Roster ({deledFaculty.length})</span>
             </button>
           </div>
 

@@ -12,7 +12,7 @@ interface AdminDashboardProps {
 type TabType = 'overview' | 'teachers' | 'students' | 'notices' | 'announcements' | 'disclosure';
 
 // Category badge color helper for Mandatory Disclosure Documents
-export const getDocCategoryBadgeClass = (category: string): string => {
+const getDocCategoryBadgeClass = (category: string): string => {
   switch (category) {
     case 'NCTE RECOGNITION':
       return 'bg-purple-100 text-purple-700 border border-purple-200';
@@ -38,7 +38,7 @@ export const getDocCategoryBadgeClass = (category: string): string => {
 };
 
 // Helper to format ISO date "YYYY-MM-DD" to standard readable notice date "21 Sep 2026"
-export const formatNoticeDate = (isoDate: string): string => {
+const formatNoticeDate = (isoDate: string): string => {
   if (!isoDate) return '';
   const parts = isoDate.split('-');
   if (parts.length === 3) {
@@ -53,7 +53,7 @@ export const formatNoticeDate = (isoDate: string): string => {
 };
 
 // Helper to convert arbitrary date string (e.g. "21 Sep 2026", "2026-09-21") to "YYYY-MM-DD" for <input type="date">
-export const toIsoDateString = (dateStr?: string): string => {
+const toIsoDateString = (dateStr?: string): string => {
   if (!dateStr || !dateStr.trim()) {
     const today = new Date();
     const y = today.getFullYear();
