@@ -192,38 +192,60 @@ function initFacultyListings() {
   }
 
   function updateCertBanner() {
-    if (!certBanner) return;
+    const pdfBtn = document.getElementById('faculty-pdf-btn');
     if (currentCourse === 'bed') {
-      certBanner.innerHTML = `
-        <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-          <i class="fa-solid fa-stamp" style="font-size: 1.5rem; color: #2563EB; margin-top: 0.2rem; flex-shrink: 0;"></i>
-          <div>
-            <div style="font-weight: 800; font-size: 0.95rem; margin-bottom: 0.25rem; color: #1E3A8A;">
-              Statutory Certification • B.Ed Course (Session 2026–2027 • NCTE Code: ERCAPP3967 • College Code: 16033)
+      if (pdfBtn) {
+        pdfBtn.setAttribute('href', 'assets/pdf/B. Ed teacher list.pdf');
+        pdfBtn.innerHTML = '<i class="fa-solid fa-file-pdf"></i> View B.Ed Signed PDF';
+      }
+      if (certBanner) {
+        certBanner.innerHTML = `
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+              <i class="fa-solid fa-stamp" style="font-size: 1.5rem; color: #2563EB; margin-top: 0.2rem; flex-shrink: 0;"></i>
+              <div>
+                <div style="font-weight: 800; font-size: 0.95rem; margin-bottom: 0.25rem; color: #1E3A8A;">
+                  Statutory Certification • B.Ed Course (Session 2026–2027 • NCTE Code: ERCAPP3967 • College Code: 16033)
+                </div>
+                <p style="margin: 0; font-size: 0.85rem; line-height: 1.55; color: #1E3A8A;">
+                  This is to certify that the appointment of the above <strong>15 teaching staff members</strong> (Principal, Assistant Professors &amp; Librarian) has been made on the basis of recommendation of the selection committee constituted as per the policy of the UGC / Affiliating Body and NCTE norms. Certified by <strong>Hiranmoy Jana</strong> (President, SVCE) and <strong>Signed &amp; Verified by Assistant Registrar (Actg), Baba Saheb Ambedkar Education University (BSAEU / erstwhile WBUTTEPA)</strong>.
+                </p>
+              </div>
             </div>
-            <p style="margin: 0; font-size: 0.85rem; line-height: 1.55; color: #1E3A8A;">
-              This is to certify that the appointment of the above <strong>15 teaching staff members</strong> (Principal, Assistant Professors &amp; Librarian) has been made on the basis of recommendation of the selection committee constituted as per the policy of the UGC / Affiliating Body and NCTE norms. Certified by <strong>Hiranmoy Jana</strong> (President, SVCE) and <strong>Signed &amp; Verified by Assistant Registrar (Actg), Baba Saheb Ambedkar Education University (BSAEU / erstwhile WBUTTEPA)</strong>.
-            </p>
+            <a href="assets/pdf/B. Ed teacher list.pdf" target="_blank" class="btn-primary" style="font-size: 0.8rem; padding: 0.45rem 0.85rem; white-space: nowrap; flex-shrink: 0;">
+              <i class="fa-solid fa-file-pdf"></i> Open Verified PDF
+            </a>
           </div>
-        </div>
-      `;
+        `;
+      }
       if (subtitleElem) {
         subtitleElem.innerText = "ERC, NCTE Delhi Format • Session 2026–2027 • NCTE Code: ERCAPP3967 • BSAEU Affiliated (50 Basic Unit)";
       }
     } else {
-      certBanner.innerHTML = `
-        <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-          <i class="fa-solid fa-stamp" style="font-size: 1.5rem; color: #2563EB; margin-top: 0.2rem; flex-shrink: 0;"></i>
-          <div>
-            <div style="font-weight: 800; font-size: 0.95rem; margin-bottom: 0.25rem; color: #1E3A8A;">
-              Statutory Certification • D.El.Ed Course (Session 2024–2026 • NCTE Code: ERCAPP77 • 50 Students Unit)
+      if (pdfBtn) {
+        pdfBtn.setAttribute('href', 'assets/pdf/D.EL.ED Teacher list.pdf');
+        pdfBtn.innerHTML = '<i class="fa-solid fa-file-pdf"></i> View D.El.Ed Signed PDF';
+      }
+      if (certBanner) {
+        certBanner.innerHTML = `
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+              <i class="fa-solid fa-stamp" style="font-size: 1.5rem; color: #2563EB; margin-top: 0.2rem; flex-shrink: 0;"></i>
+              <div>
+                <div style="font-weight: 800; font-size: 0.95rem; margin-bottom: 0.25rem; color: #1E3A8A;">
+                  Statutory Certification • D.El.Ed Course (Session 2024–2026 • NCTE Code: ERCAPP77 • 50 Students Unit)
+                </div>
+                <p style="margin: 0; font-size: 0.85rem; line-height: 1.55; color: #1E3A8A;">
+                  All teaching staff members have been appointed on the basis of recommendation of the selection committee constituted as per NCTE Norms (2014 &amp; 2009) and paid salary as prescribed through account payee cheque. Certified by <strong>Hiranmoy Jana</strong> (President, SVCE - 16/06/2024), <strong>Representative Nominee (DIET Jhargram - 16/06/2024)</strong>, and Counter-Signed by <strong>Secretary, West Bengal Board of Primary Education (WBBPE - 17/08/2024)</strong>.
+                </p>
+              </div>
             </div>
-            <p style="margin: 0; font-size: 0.85rem; line-height: 1.55; color: #1E3A8A;">
-              All teaching staff members have been appointed on the basis of recommendation of the selection committee constituted as per NCTE Norms (2014 &amp; 2009) and paid salary as prescribed through account payee cheque. Certified by <strong>Hiranmoy Jana</strong> (President, SVCE - 16/06/2024), <strong>Representative Nominee (DIET Jhargram - 16/06/2024)</strong>, and Counter-Signed by <strong>Secretary, West Bengal Board of Primary Education (WBBPE - 17/08/2024)</strong>.
-            </p>
+            <a href="assets/pdf/D.EL.ED Teacher list.pdf" target="_blank" class="btn-primary" style="font-size: 0.8rem; padding: 0.45rem 0.85rem; white-space: nowrap; flex-shrink: 0;">
+              <i class="fa-solid fa-file-pdf"></i> Open Verified PDF
+            </a>
           </div>
-        </div>
-      `;
+        `;
+      }
       if (subtitleElem) {
         subtitleElem.innerText = "ERC, NCTE Bhubaneswar Format • Session 2024–2026 • NCTE Code: ERCAPP77 • WBBPE Affiliated (50 Basic Unit)";
       }

@@ -470,9 +470,29 @@ button, input, select, textarea {
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(6, 18, 38, 0.95) 0%, rgba(10, 30, 63, 0.85) 55%, rgba(10, 30, 63, 0.65) 100%),
-              url('../assets/images/campus.svg') center/cover no-repeat;
-  opacity: 0.95;
+  background: linear-gradient(90deg, rgba(6, 18, 38, 0.92) 0%, rgba(10, 30, 63, 0.82) 55%, rgba(10, 30, 63, 0.60) 100%),
+              url('../assets/images/college.jpeg') center/cover no-repeat;
+  opacity: 0.96;
+}
+
+.campus-photo-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.campus-photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.campus-photo-card:hover img {
+  transform: scale(1.03);
 }
 
 .hero-grid {

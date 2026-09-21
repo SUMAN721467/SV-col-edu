@@ -114,6 +114,7 @@ function initModals() {
 
     if (type === 'deled-ncte') {
       const doc = disclosures.ncteDeledOrder;
+      const pdfUrl = "assets/pdf/NCTE ORDER COPY  D.EL.ED.pdf";
       title = "NCTE Recognition Order - D.El.Ed Course (ERCAPP77)";
       contentHtml = `
         <div style="border-bottom: 2px solid #E2E8F0; padding-bottom: 1rem; margin-bottom: 1.5rem;">
@@ -128,12 +129,17 @@ function initModals() {
           <p><strong>Governing Regulations:</strong> ${doc.regulations}</p>
         </div>
         <h5 style="font-size: 1rem; font-weight: 700; color: #0A1E3F; margin-bottom: 0.75rem;">Key Regulatory Provisions & Mandatory Clauses:</h5>
-        <ul style="list-style: disc; padding-left: 1.5rem; font-size: 0.9rem; line-height: 1.7; color: #334155;">
+        <ul style="list-style: disc; padding-left: 1.5rem; font-size: 0.9rem; line-height: 1.7; color: #334155; margin-bottom: 1.5rem;">
           ${doc.clauses.map(c => `<li>${c}</li>`).join('')}
         </ul>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="${pdfUrl}" target="_blank" class="btn-primary" style="font-size: 0.85rem;"><i class="fa-solid fa-file-pdf"></i> View Signed Original PDF</a>
+          <a href="${pdfUrl}" download class="btn-secondary" style="font-size: 0.85rem;"><i class="fa-solid fa-download"></i> Download PDF</a>
+        </div>
       `;
     } else if (type === 'bed-ncte') {
       const doc = disclosures.ncteBedOrder;
+      const pdfUrl = "assets/pdf/B.ED . RECOGNISED COPY.pdf";
       title = "NCTE Recognition Order - B.Ed Course (ERCAPP3967)";
       contentHtml = `
         <div style="border-bottom: 2px solid #E2E8F0; padding-bottom: 1rem; margin-bottom: 1.5rem;">
@@ -147,12 +153,17 @@ function initModals() {
           <p><strong>Academic Commencement:</strong> ${doc.session}</p>
         </div>
         <h5 style="font-size: 1rem; font-weight: 700; color: #0A1E3F; margin-bottom: 0.75rem;">Regulatory Compliance:</h5>
-        <ul style="list-style: disc; padding-left: 1.5rem; font-size: 0.9rem; line-height: 1.7; color: #334155;">
+        <ul style="list-style: disc; padding-left: 1.5rem; font-size: 0.9rem; line-height: 1.7; color: #334155; margin-bottom: 1.5rem;">
           ${doc.clauses.map(c => `<li>${c}</li>`).join('')}
         </ul>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="${pdfUrl}" target="_blank" class="btn-primary" style="font-size: 0.85rem;"><i class="fa-solid fa-file-pdf"></i> View Signed Original PDF</a>
+          <a href="${pdfUrl}" download class="btn-secondary" style="font-size: 0.85rem;"><i class="fa-solid fa-download"></i> Download PDF</a>
+        </div>
       `;
     } else if (type === 'wbbpe') {
       const doc = disclosures.wbbpeOrder;
+      const pdfUrl = "assets/pdf/D.EL.ED AFFILIATION COPY.pdf";
       title = "West Bengal Board of Primary Education (WBBPE) Affiliation Renewal";
       contentHtml = `
         <div style="border-bottom: 2px solid #E2E8F0; padding-bottom: 1rem; margin-bottom: 1.5rem;">
@@ -166,9 +177,13 @@ function initModals() {
           <p><strong>Renewal Period:</strong> ${doc.renewalSessions}</p>
         </div>
         <h5 style="font-size: 1rem; font-weight: 700; color: #0A1E3F; margin-bottom: 0.75rem;">Affiliation Conditions:</h5>
-        <ul style="list-style: disc; padding-left: 1.5rem; font-size: 0.9rem; line-height: 1.7; color: #334155;">
+        <ul style="list-style: disc; padding-left: 1.5rem; font-size: 0.9rem; line-height: 1.7; color: #334155; margin-bottom: 1.5rem;">
           ${doc.clauses.map(c => `<li>${c}</li>`).join('')}
         </ul>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="${pdfUrl}" target="_blank" class="btn-primary" style="font-size: 0.85rem;"><i class="fa-solid fa-file-pdf"></i> View Signed Original PDF</a>
+          <a href="${pdfUrl}" download class="btn-secondary" style="font-size: 0.85rem;"><i class="fa-solid fa-download"></i> Download PDF</a>
+        </div>
       `;
     }
 
