@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
+  <link rel="icon" type="image/jpeg" href="assets/images/vivekananda.jpg">
+  <link rel="apple-touch-icon" href="assets/images/vivekananda.jpg">
+  
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
@@ -32,14 +35,16 @@
   <!-- Header -->
   <header class="main-header">
     <div class="container header-brand-wrap">
-      <div class="brand-identity">
-        <div class="brand-crest"><i class="fa-solid fa-graduation-cap"></i></div>
+      <a href="index.html" class="brand-identity" title="Swami Vivekananda College of Education - Home">
+        <div class="brand-crest">
+          <img src="assets/images/vivekananda.jpg" alt="Swami Vivekananda Emblem" width="68" height="68">
+        </div>
         <div class="brand-titles">
           <h1>Swami Vivekananda College of Education</h1>
-          <div class="brand-subtitle">Faculty of Teacher Education & Departmental Roster</div>
-          <div class="brand-trust"><i class="fa-solid fa-shield-halved"></i> NCTE Code: ERCAPP77 & ERCAPP3967</div>
+          <div class="brand-subtitle">Faculty of Teacher Education &amp; Departmental Roster</div>
+          <div class="brand-trust"><i class="fa-solid fa-shield-halved"></i> NCTE Code: ERCAPP77 &amp; ERCAPP3967</div>
         </div>
-      </div>
+      </a>
       
       <div class="header-accreditations">
         <div class="accred-pill">
@@ -78,7 +83,7 @@
         <a href="index.html">Home</a> <span>/</span> <span>Faculty Directory</span>
       </div>
       <h2 class="page-title">Faculty & Academic Staff</h2>
-      <p class="page-subtitle">Highly qualified and experienced pedagogues appointed as per NCTE Regulations & Norms (Session 2024–2026).</p>
+      <p class="page-subtitle">Highly qualified and experienced pedagogues appointed as per NCTE Regulations & Norms (Session 2026–2027 / 2024–2026).</p>
     </div>
   </div>
 
@@ -86,45 +91,128 @@
   <section class="section-padding">
     <div class="container">
 
-      <!-- Official Certification Statement Banner -->
-      <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-left: 5px solid #2563EB; padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 2.5rem; font-size: 0.875rem; color: #1E3A8A; line-height: 1.6;">
-        <i class="fa-solid fa-stamp" style="font-size: 1.1rem; color: #2563EB; margin-right: 0.4rem;"></i>
-        <strong>Statutory Certification:</strong> All teaching staff members have been appointed on the basis of recommendation of the selection committee constituted as per the policy of the UGC / Affiliating Body and paid salary in such scale of pay as prescribed by UGC/University through account payee cheque. Certified by <strong>Hiranmoy Jana</strong> (President, SVCE) and Counter-Signed by <strong>Secretary, West Bengal Board of Primary Education (WBBPE)</strong> & DIET Jhargram Representative.
+      <!-- Course Roster Switcher Tabs -->
+      <div class="tabs-header" style="justify-content: flex-start; margin-bottom: 2rem;">
+        <button class="tab-btn faculty-course-tab active" data-course="bed">
+          <i class="fa-solid fa-graduation-cap"></i> B.Ed Faculty Roster (Session 2026–2027 • BSAEU)
+        </button>
+        <button class="tab-btn faculty-course-tab" data-course="deled">
+          <i class="fa-solid fa-school"></i> D.El.Ed Faculty Roster (Session 2024–2026 • WBBPE)
+        </button>
+      </div>
+
+      <!-- Quick Metrics Highlights -->
+      <div class="responsive-grid-4" style="margin-bottom: 2rem;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow-sm);">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #EFF6FF; color: #2563EB; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <div>
+            <div id="faculty-total-count" style="font-size: 1.2rem; font-weight: 800; color: var(--primary-navy); line-height: 1.2;">15 Appointed Staff</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">100% NCTE Approved</div>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow-sm);">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #ECFDF5; color: #059669; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div>
+            <div id="faculty-net-count" style="font-size: 1.2rem; font-weight: 800; color: var(--primary-navy); line-height: 1.2;">10 UGC-NET / SET / Ph.D</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">National Research Standards</div>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow-sm);">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #FFFBEB; color: #D97706; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: var(--primary-navy); line-height: 1.2;">Basic Unit (50)</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">NCTE Staff Ratio Compliant</div>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow-sm);">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #FAF5FF; color: #9333EA; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: var(--primary-navy); line-height: 1.2;">University Verified</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">BSAEU & WBBPE Counter-Signed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Official Certification Statement Banner (Dynamic) -->
+      <div id="faculty-cert-banner" style="background: #EFF6FF; border: 1px solid #BFDBFE; border-left: 5px solid #2563EB; padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; font-size: 0.875rem; color: #1E3A8A; line-height: 1.6;">
+        <!-- Populated via JavaScript -->
+      </div>
+
+      <!-- Filter & Search Toolbar -->
+      <div class="table-toolbar">
+        <div class="toolbar-controls">
+          <div class="search-input-wrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="faculty-search" placeholder="Search faculty name, subject, or qualification...">
+          </div>
+          <select id="faculty-category-filter" class="filter-select">
+            <option value="all">All Categories</option>
+            <option value="gen">GEN</option>
+            <option value="sc">SC</option>
+            <option value="st">ST</option>
+            <option value="obc-a">OBC-A</option>
+            <option value="obc-b">OBC-B</option>
+          </select>
+          <select id="faculty-subject-filter" class="filter-select">
+            <option value="all">All Subjects / Domains</option>
+          </select>
+        </div>
+        <div class="toolbar-actions">
+          <button onclick="exportFacultyCSV()" class="btn-secondary"><i class="fa-solid fa-file-excel"></i> Export CSV</button>
+          <button onclick="window.print()" class="btn-secondary"><i class="fa-solid fa-print"></i> Print Roster</button>
+        </div>
       </div>
 
       <!-- Faculty Grid View -->
-      <div class="section-header" style="text-align: left; margin-bottom: 1.75rem;">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
         <span class="section-eyebrow">Meet Our Mentors</span>
-        <h3 class="section-title" style="font-size: 1.75rem;">Teaching Faculty & Administration</h3>
+        <h3 class="section-title" style="font-size: 1.75rem;">Faculty Profiles & Pedagogical Disciplines</h3>
       </div>
 
       <div class="faculty-grid" id="faculty-cards-grid">
-        <!-- Rendered via JavaScript from SVCE_DATA.faculty -->
+        <!-- Rendered via JavaScript from SVCE_DATA -->
       </div>
 
       <!-- NCTE Particulars Table View -->
       <div style="margin-top: 4.5rem;">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
           <div>
-            <span class="section-eyebrow">Mandatory Disclosure Table</span>
+            <span class="section-eyebrow">Statutory Particulars</span>
             <h3 class="section-title" style="font-size: 1.75rem; margin-bottom: 0.25rem;">NCTE Format - Particulars of Staff</h3>
-            <p style="font-size: 0.875rem; color: var(--text-muted);">ERC, NCTE, Bhubaneswar • Session 2024–2026 • NCTE Code: ERCAPP77</p>
+            <p id="faculty-roster-subtitle" style="font-size: 0.875rem; color: var(--text-muted);">
+              ERC NCTE Delhi Format • Session 2026–2027 • NCTE Code: ERCAPP3967 • BSAEU Affiliated
+            </p>
           </div>
-          <button onclick="window.print()" class="btn-secondary"><i class="fa-solid fa-print"></i> Print Official Roster</button>
+          <div style="display: flex; gap: 0.5rem;">
+            <button onclick="exportFacultyCSV()" class="btn-secondary"><i class="fa-solid fa-download"></i> CSV</button>
+            <button onclick="window.print()" class="btn-secondary"><i class="fa-solid fa-print"></i> Print Official Roster</button>
+          </div>
         </div>
 
         <div class="table-responsive">
           <table class="custom-table">
             <thead>
               <tr>
-                <th>Sl No.</th>
-                <th>Name & DOB</th>
+                <th style="width: 50px; text-align: center;">Sl No.</th>
+                <th>Name, DOB & Age</th>
                 <th>Category</th>
                 <th>Designation</th>
                 <th>Subject of Teaching</th>
                 <th>Academic Qualifications</th>
-                <th>Experience</th>
-                <th>Joining Date</th>
+                <th>Ph.D / NET / SET</th>
+                <th>Teaching Exp.</th>
+                <th>Appointment & Joining</th>
               </tr>
             </thead>
             <tbody id="faculty-table-body">

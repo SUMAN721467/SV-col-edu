@@ -3,6 +3,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initUrlNormalizer();
   initNavigation();
   initNoticeTicker();
   initModals();
@@ -10,6 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   highlightActiveNav();
 });
+
+/* URL Normalizer for Clean URLs (e.g. /home instead of /index.html) */
+function initUrlNormalizer() {
+  if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+    const path = window.location.pathname;
+    if (path.endsWith('/index.html') || path === '/' || path === '') {
+      window.history.replaceState(null, '', '/home');
+    }
+  }
+}
 
 /* Mobile Navigation Toggle */
 function initNavigation() {
@@ -60,7 +71,10 @@ function highlightActiveNav() {
   
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+    const isHomeLink = href === 'index.html' || href === 'home' || href === '/home' || href === '/';
+    const isCurrentHome = currentPath === 'index.html' || currentPath === 'home' || currentPath === '';
+    
+    if ((isHomeLink && isCurrentHome) || href === currentPath) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');

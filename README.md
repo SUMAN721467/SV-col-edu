@@ -17,11 +17,12 @@ Managed by **Sahid Khudiram Memorial Trust**.
 
 ## 📂 Project Structure
 ```
+├── .htaccess                  # Apache Clean URL Rewrites (/home, extensionless URLs)
 ├── index.html                 # Main Homepage
 ├── about.html                 # About Us & Trust Governance
 ├── academics.html             # D.El.Ed & B.Ed Course Specifications
-├── faculty.html               # 10 Certified Faculty Roster & NCTE Table
-├── students.html              # 50 Admitted Students Database
+├── faculty.html               # 15 B.Ed & 10 D.El.Ed Certified Faculty Rosters & NCTE Table
+├── students.html              # 50 Admitted Students Database (Session 2026–2028)
 ├── mandatory-disclosure.html  # Statutory & Regulatory Disclosures
 ├── gallery.html               # Campus Infrastructure & Lab Gallery
 ├── contact.html               # Campus Address & Inquiry Form
