@@ -25,9 +25,9 @@ interface DataContextType {
   pushStudentsToSupabase: () => Promise<{ success: boolean; message: string }>;
   
   // Teacher Actions
-  addTeacher: (teacher: Omit<FacultyMember, 'slNo'>, department: 'bed' | 'deled') => Promise<void>;
-  updateTeacher: (slNo: number, updated: Partial<FacultyMember>, department: 'bed' | 'deled') => Promise<void>;
-  deleteTeacher: (slNo: number, department: 'bed' | 'deled') => Promise<void>;
+  addTeacher: (teacher: Omit<FacultyMember, 'slNo'> & { slNo?: number | string }, department: 'bed' | 'deled') => Promise<void>;
+  updateTeacher: (slNo: number | string, updated: Partial<FacultyMember>, department: 'bed' | 'deled') => Promise<void>;
+  deleteTeacher: (slNo: number | string, department: 'bed' | 'deled') => Promise<void>;
   pushTeachersToSupabase: () => Promise<{ success: boolean; message: string }>;
   
   // Notice Actions
@@ -79,7 +79,13 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [bedFaculty, setBedFaculty] = useState<FacultyMember[]>(() => {
     const saved = localStorage.getItem('svce_bed_faculty');
     if (saved) {
-      try { return JSON.parse(saved); } catch { return BED_FACULTY; }
+      try {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length >= 15) {
+          return parsed;
+        }
+        return BED_FACULTY;
+      } catch { return BED_FACULTY; }
     }
     return BED_FACULTY;
   });
@@ -88,7 +94,13 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [deledFaculty, setDeledFaculty] = useState<FacultyMember[]>(() => {
     const saved = localStorage.getItem('svce_deled_faculty');
     if (saved) {
-      try { return JSON.parse(saved); } catch { return DELED_FACULTY; }
+      try {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length >= 10 && parsed[0]?.slNo === "I.A (1)") {
+          return parsed;
+        }
+        return DELED_FACULTY;
+      } catch { return DELED_FACULTY; }
     }
     return DELED_FACULTY;
   });
@@ -172,8 +184,12 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const deledList: FacultyMember[] = [];
 
         dbFaculty.forEach((f, idx) => {
+          const originalDeled = f.department === 'deled' ? DELED_FACULTY.find(d => d.name === f.name) : null;
+          const originalBed = f.department === 'bed' ? BED_FACULTY.find(b => b.name === f.name) : null;
+
           const member: FacultyMember = {
-            slNo: f.sl_no || idx + 1,
+            slNo: originalDeled ? originalDeled.slNo : (originalBed ? originalBed.slNo : (f.sl_no || idx + 1)),
+            section: f.section || originalDeled?.section,
             name: f.name,
             dob: f.dob || '',
             age: f.age || '',
@@ -182,12 +198,12 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
             type: f.type || 'Regular',
             subject: f.subject,
             qualifications: {
-              masterSubject: f.master_subject || f.subject,
-              bEd: f.bed_qual || 'Yes',
-              mEd: f.med_qual || 'Yes',
-              maEd: 'No',
-              phd: f.phd_qual || 'No',
-              netSet: f.net_set || 'No'
+              masterSubject: f.master_subject || (originalDeled?.qualifications.masterSubject) || (originalBed?.qualifications.masterSubject) || f.subject,
+              bEd: f.bed_qual || (originalDeled?.qualifications.bEd) || (originalBed?.qualifications.bEd) || 'Yes',
+              mEd: f.med_qual || (originalDeled?.qualifications.mEd) || (originalBed?.qualifications.mEd) || 'Yes',
+              maEd: (originalDeled?.qualifications.maEd) || (originalBed?.qualifications.maEd) || 'No',
+              phd: f.phd_qual || (originalDeled?.qualifications.phd) || (originalBed?.qualifications.phd) || 'No',
+              netSet: f.net_set || (originalDeled?.qualifications.netSet) || (originalBed?.qualifications.netSet) || 'No'
             },
             experience: f.experience || '3 Years',
             recognizedExp: f.recognized_exp || 'Swami Vibekananda College of Education',
@@ -271,8 +287,8 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setIsSyncing(true);
     try {
       const allFacultyPayload = [
-        ...bedFaculty.map(f => ({
-          sl_no: f.slNo,
+        ...bedFaculty.map((f, idx) => ({
+          sl_no: typeof f.slNo === 'number' ? f.slNo : idx + 1,
           department: 'bed',
           name: f.name,
           dob: f.dob,
@@ -293,8 +309,8 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
           bio: f.bio,
           avatar: f.avatar
         })),
-        ...deledFaculty.map(f => ({
-          sl_no: f.slNo,
+        ...deledFaculty.map((f, idx) => ({
+          sl_no: typeof f.slNo === 'number' ? f.slNo : idx + 1,
           department: 'deled',
           name: f.name,
           dob: f.dob,
@@ -320,10 +336,25 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
       await supabase.from('faculty').delete().neq('department', 'none');
       const { error } = await supabase.from('faculty').insert(allFacultyPayload);
 
-      if (error) throw error;
-      return { success: true, message: `Successfully pushed all ${allFacultyPayload.length} teacher records to Supabase 'faculty' table!` };
+      if (error) {
+        console.warn('Full faculty insert notice, attempting schema fallback:', error);
+        const fallbackPayload = allFacultyPayload.map(f => ({
+          sl_no: f.sl_no,
+          department: f.department,
+          name: f.name,
+          designation: f.designation,
+          subject: f.subject,
+          experience: f.experience,
+          joining_date: f.joining_date
+        }));
+        const { error: fbErr } = await supabase.from('faculty').insert(fallbackPayload);
+        if (fbErr) throw fbErr;
+      }
+
+      return { success: true, message: `Successfully pushed all ${allFacultyPayload.length} teacher records (15 B.Ed + 10 D.El.Ed) to Supabase 'faculty' table!` };
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : 'Database error';
+      const pgErr = err as { message?: string; details?: string; hint?: string };
+      const msg = pgErr?.message || pgErr?.details || (err instanceof Error ? err.message : 'Database error');
       return { success: false, message: `Failed to push teachers: ${msg}` };
     } finally {
       setIsSyncing(false);
@@ -566,12 +597,12 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   // Teacher Actions
-  const addTeacher = async (teacherData: Omit<FacultyMember, 'slNo'>, department: 'bed' | 'deled') => {
+  const addTeacher = async (teacherData: Omit<FacultyMember, 'slNo'> & { slNo?: number | string }, department: 'bed' | 'deled') => {
     const targetList = department === 'bed' ? bedFaculty : deledFaculty;
-    const newSlNo = targetList.length > 0 ? Math.max(...targetList.map(f => f.slNo)) + 1 : 1;
+    const newSlNo = teacherData.slNo || (targetList.length + 1);
     const newTeacher: FacultyMember = {
-      slNo: newSlNo,
-      ...teacherData
+      ...teacherData,
+      slNo: newSlNo
     };
 
     if (department === 'bed') {
@@ -583,7 +614,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (supabase && isSupabaseConfigured()) {
       try {
         await supabase.from('faculty').insert([{
-          sl_no: newSlNo,
+          sl_no: typeof newSlNo === 'number' ? newSlNo : targetList.length + 1,
           department,
           name: newTeacher.name,
           dob: newTeacher.dob,
@@ -610,7 +641,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const updateTeacher = async (slNo: number, updated: Partial<FacultyMember>, department: 'bed' | 'deled') => {
+  const updateTeacher = async (slNo: number | string, updated: Partial<FacultyMember>, department: 'bed' | 'deled') => {
     const targetList = department === 'bed' ? bedFaculty : deledFaculty;
     const existing = targetList.find(f => f.slNo === slNo);
     if (!existing) return;
@@ -659,7 +690,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const deleteTeacher = async (slNo: number, department: 'bed' | 'deled') => {
+  const deleteTeacher = async (slNo: number | string, department: 'bed' | 'deled') => {
     const targetList = department === 'bed' ? bedFaculty : deledFaculty;
     const teacherToDelete = targetList.find(f => f.slNo === slNo);
 

@@ -167,8 +167,17 @@ export const Faculty: React.FC<FacultyProps> = ({ onNavigate }) => {
 
                 <div className="p-5 space-y-2 text-xs text-slate-600 flex-grow">
                   <p><strong className="text-slate-800">Subject:</strong> {member.subject}</p>
-                  <p><strong className="text-slate-800">Qualifications:</strong> {member.qualifications.masterSubject}</p>
+                  <p><strong className="text-slate-800">Master's Subject:</strong> {member.qualifications.masterSubject}</p>
                   <p><strong className="text-slate-800">B.Ed / M.Ed:</strong> B.Ed: {member.qualifications.bEd} | M.Ed: {member.qualifications.mEd}</p>
+                  {member.qualifications.maEd && member.qualifications.maEd !== 'No' && (
+                    <p><strong className="text-slate-800">M.A. Education:</strong> {member.qualifications.maEd}</p>
+                  )}
+                  {member.qualifications.phd && member.qualifications.phd !== 'No' && (
+                    <p><strong className="text-slate-800">Ph.D:</strong> {member.qualifications.phd}</p>
+                  )}
+                  {member.qualifications.netSet && member.qualifications.netSet !== 'No' && (
+                    <p><strong className="text-slate-800">UGC NET / SET:</strong> <span className="inline-block bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded text-[11px]">{member.qualifications.netSet}</span></p>
+                  )}
                   <p><strong className="text-slate-800">Experience:</strong> {member.experience} ({member.recognizedExp})</p>
                   <p><strong className="text-slate-800">Joining Date:</strong> {member.joiningDate}</p>
                   {member.bio && <p className="text-slate-500 italic pt-1 text-[11px] border-t border-slate-100">{member.bio}</p>}
@@ -213,7 +222,12 @@ export const Faculty: React.FC<FacultyProps> = ({ onNavigate }) => {
                       <td>
                         <div className="text-xs">
                           <strong>{m.qualifications.masterSubject}</strong>
-                          <div className="text-slate-500">B.Ed: {m.qualifications.bEd} | M.Ed: {m.qualifications.mEd}</div>
+                          <div className="text-slate-500">
+                            B.Ed: {m.qualifications.bEd} | M.Ed: {m.qualifications.mEd}
+                            {m.qualifications.maEd && m.qualifications.maEd !== 'No' && ` | M.A. Ed: ${m.qualifications.maEd}`}
+                            {m.qualifications.phd && m.qualifications.phd !== 'No' && ` | Ph.D: ${m.qualifications.phd}`}
+                            {m.qualifications.netSet && m.qualifications.netSet !== 'No' && ` | NET/SET: ${m.qualifications.netSet}`}
+                          </div>
                         </div>
                       </td>
                       <td>{m.experience}</td>

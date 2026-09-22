@@ -55,7 +55,8 @@ export interface FacultyQualifications {
 }
 
 export interface FacultyMember {
-  slNo: number;
+  slNo: number | string;
+  section?: string;
   name: string;
   dob: string;
   age: string;

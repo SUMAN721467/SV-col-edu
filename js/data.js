@@ -57,13 +57,13 @@ const SVCE_DATA = {
     ]
   },
 
-  // B.Ed Certified Staff Members (Session 2026-2027 / ERCAPP3967 / BSAEU Affiliated) - Total 15 Members
+  // B.Ed Certified Staff Members - Total 15 Members (Single Source of Truth)
   bedFaculty: [
     {
       slNo: 1,
       name: "Dr. Krishna Kumar",
       dob: "05/05/1977",
-      age: "48 Y 9M",
+      age: "48Y 9M",
       category: "GEN",
       designation: "Principal",
       type: "Regular",
@@ -71,30 +71,30 @@ const SVCE_DATA = {
         bEd: "Yes (63.77%)",
         mEd: "Yes (56.46%)",
         maEd: "No",
-        masterSubject: "M.Sc. Zoology (64.33%)",
-        phd: "Yes (Education)",
+        masterSubject: "Zoology (64.33%)",
+        phd: "Yes (Zoology)",
         netSet: "No"
       },
-      subject: "Zoology",
+      subject: "Education",
       experience: "13.5 Years",
-      recognizedExp: "Magadh Teacher's Training (B.Ed.) College",
+      recognizedExp: "13.5 Years",
       initialAppt: "28/06/2019",
       joiningDate: "01/07/2019",
-      bio: "Principal and head of institution with 13.5+ years of academic and administrative leadership in recognized teacher training colleges.",
-      avatar: "fa-user-tie"
+      bio: "Principal with 13.5 Years teaching experience in Education and Zoology.",
+      avatar: "fa-graduation-cap"
     },
     {
       slNo: 2,
       name: "Aparna Sarkar",
       dob: "26/12/1981",
-      age: "44 Y 1M",
+      age: "44Y 1M",
       category: "GEN",
       designation: "Assistant Professor",
       type: "Regular",
       qualifications: {
         bEd: "Yes (65.00%)",
         mEd: "No",
-        maEd: "M.A. Education (68.13%)",
+        maEd: "Yes (68.13%)",
         masterSubject: "No",
         phd: "No",
         netSet: "No"
@@ -104,14 +104,14 @@ const SVCE_DATA = {
       recognizedExp: "9.5 Years",
       initialAppt: "23/04/2016",
       joiningDate: "27/04/2016",
-      bio: "Foundations of education and pedagogical philosophy specialist with 9.5 years of devoted teaching experience.",
-      avatar: "fa-brain"
+      bio: "Assistant Professor in Foundation education with 9.5 Years experience.",
+      avatar: "fa-book-open-reader"
     },
     {
       slNo: 3,
       name: "Samaresh Ojha",
       dob: "24/11/1980",
-      age: "45 Y 2M",
+      age: "45Y 2M",
       category: "OBC-B",
       designation: "Assistant Professor",
       type: "Regular",
@@ -119,7 +119,7 @@ const SVCE_DATA = {
         bEd: "Yes (60.81%)",
         mEd: "Yes (58.75%)",
         maEd: "No",
-        masterSubject: "M.A. English (52.20%)",
+        masterSubject: "English (52.20%)",
         phd: "No",
         netSet: "No"
       },
@@ -128,14 +128,14 @@ const SVCE_DATA = {
       recognizedExp: "9.5 Years",
       initialAppt: "23/04/2016",
       joiningDate: "27/04/2016",
-      bio: "Language pedagogy instructor focusing on communicative English skills, phonetics, and curriculum methodologies.",
+      bio: "Assistant Professor in English with 9.5 Years teaching experience.",
       avatar: "fa-chalkboard-user"
     },
     {
       slNo: 4,
       name: "Narayan Chandra Sasmal",
       dob: "07/01/1974",
-      age: "52 Y 1M",
+      age: "52Y 1M",
       category: "GEN",
       designation: "Assistant Professor",
       type: "Regular",
@@ -143,7 +143,7 @@ const SVCE_DATA = {
         bEd: "Yes (56.50%)",
         mEd: "Yes (57.66%)",
         maEd: "No",
-        masterSubject: "M.A. History (55.25%)",
+        masterSubject: "History (55.25%)",
         phd: "No",
         netSet: "No"
       },
@@ -152,14 +152,14 @@ const SVCE_DATA = {
       recognizedExp: "9.5 Years",
       initialAppt: "23/04/2016",
       joiningDate: "27/04/2016",
-      bio: "Expert in historical perspectives of Indian education, social studies methodology, and heritage awareness.",
+      bio: "Assistant Professor in History with 9.5 Years teaching experience.",
       avatar: "fa-landmark"
     },
     {
       slNo: 5,
       name: "Arun Jana",
       dob: "25/06/1980",
-      age: "45 Y 7M",
+      age: "45Y 7M",
       category: "GEN",
       designation: "Assistant Professor",
       type: "Regular",
@@ -176,14 +176,14 @@ const SVCE_DATA = {
       recognizedExp: "9.5 Years",
       initialAppt: "23/04/2016",
       joiningDate: "27/04/2016",
-      bio: "Fine arts educator guiding teacher trainees in instructional art, visual communications, and SUPW crafting.",
+      bio: "Assistant Professor in Fine Arts with 9.5 Years teaching experience.",
       avatar: "fa-palette"
     },
     {
       slNo: 6,
       name: "Satinath Maity",
       dob: "11/06/1990",
-      age: "35 Y 7M",
+      age: "35Y 7M",
       category: "GEN",
       designation: "Assistant Professor",
       type: "Regular",
@@ -191,23 +191,23 @@ const SVCE_DATA = {
         bEd: "Yes (80.50%)",
         mEd: "Yes (76.75%)",
         maEd: "No",
-        masterSubject: "M.A. Education (67.50%)",
+        masterSubject: "Education (67.50%)",
         phd: "No",
-        netSet: "Yes (UGC NET)"
+        netSet: "Yes (NET)"
       },
       subject: "Education",
       experience: "02 Years",
       recognizedExp: "02 Years",
       initialAppt: "27/09/2023",
       joiningDate: "05/10/2023",
-      bio: "UGC NET qualified faculty member specializing in advanced pedagogical theories, assessment frameworks, and research.",
+      bio: "UGC NET qualified Assistant Professor in Education.",
       avatar: "fa-book-open-reader"
     },
     {
       slNo: 7,
       name: "Harcharan Singh",
       dob: "08/01/1987",
-      age: "39 Y 1M",
+      age: "39Y 1M",
       category: "GEN",
       designation: "Assistant Professor",
       type: "Regular",
@@ -215,23 +215,23 @@ const SVCE_DATA = {
         bEd: "Yes (73.08%)",
         mEd: "Yes (67.67%)",
         maEd: "No",
-        masterSubject: "M.Sc. Information Technology (65.70%)",
+        masterSubject: "Information Technology (65.70%)",
         phd: "No",
-        netSet: "Yes (UGC NET)"
+        netSet: "Yes (NET)"
       },
       subject: "Computer Application",
       experience: "02 Years",
       recognizedExp: "02 Years",
       initialAppt: "27/09/2023",
       joiningDate: "05/10/2023",
-      bio: "UGC NET qualified mentor directing educational technology, interactive ICT classroom tools, and computer applications.",
+      bio: "UGC NET qualified Assistant Professor in Computer Application.",
       avatar: "fa-laptop-code"
     },
     {
       slNo: 8,
       name: "Sujoy Chakraborty",
       dob: "10/11/1988",
-      age: "37 Y 2M",
+      age: "37Y 2M",
       category: "GEN",
       designation: "Assistant Professor",
       type: "Regular",
@@ -239,30 +239,30 @@ const SVCE_DATA = {
         bEd: "Yes (69.50%)",
         mEd: "Yes (77.10%)",
         maEd: "No",
-        masterSubject: "M.Sc. Botany (61.90%)",
+        masterSubject: "Botany (61.90%)",
         phd: "No",
-        netSet: "Yes (UGC NET)"
+        netSet: "Yes (NET)"
       },
       subject: "Life Science",
       experience: "02 Years",
       recognizedExp: "02 Years",
       initialAppt: "27/09/2023",
       joiningDate: "05/10/2023",
-      bio: "UGC NET qualified pedagogue guiding life science laboratory practices, botany instruction, and environmental sciences.",
+      bio: "UGC NET qualified Assistant Professor in Life Science.",
       avatar: "fa-dna"
     },
     {
       slNo: 9,
       name: "Debashis Halder",
       dob: "07/04/1995",
-      age: "30 Y 10M",
+      age: "30Y 10M",
       category: "SC",
       designation: "Assistant Professor",
       type: "Regular",
       qualifications: {
         bEd: "Yes (72.45%)",
         mEd: "No",
-        maEd: "M.A. Education (77.60%)",
+        maEd: "Yes (77.60%)",
         masterSubject: "No",
         phd: "No",
         netSet: "Yes (SET)"
@@ -272,46 +272,46 @@ const SVCE_DATA = {
       recognizedExp: "02 Years",
       initialAppt: "03/10/2023",
       joiningDate: "05/10/2023",
-      bio: "WB SET qualified lecturer in pedagogical foundations, educational sociology, and learner psychology.",
+      bio: "SET qualified Assistant Professor in Foundation.",
       avatar: "fa-graduation-cap"
     },
     {
       slNo: 10,
       name: "Poulami Mondal",
       dob: "23/08/1991",
-      age: "34 Y 5M",
+      age: "34Y 5M",
       category: "SC",
       designation: "Assistant Professor",
       type: "Regular",
       qualifications: {
         bEd: "Yes (58.20%)",
         mEd: "Yes (74.00%)",
-        maEd: "M.A. Education (89.13%)",
-        masterSubject: "M.A./M.Sc. Geography (58.90%)",
+        maEd: "Yes (89.13%)",
+        masterSubject: "Geography (58.90%)",
         phd: "No",
-        netSet: "Yes (UGC NET)"
+        netSet: "Yes (NET)"
       },
       subject: "Geography",
       experience: "02 Years",
       recognizedExp: "02 Years",
       initialAppt: "03/10/2023",
       joiningDate: "05/10/2023",
-      bio: "UGC NET qualified faculty member with 89.13% in M.A. Education, teaching geography pedagogy and field techniques.",
+      bio: "UGC NET qualified Assistant Professor in Geography.",
       avatar: "fa-earth-asia"
     },
     {
       slNo: 11,
       name: "Chandan Pal",
       dob: "20/03/1989",
-      age: "36 Y 10M",
+      age: "36Y 10M",
       category: "GEN",
       designation: "Assistant Professor",
       type: "Regular",
       qualifications: {
-        bEd: "Yes (70.50%)",
+        bEd: "Yes (70.5%)",
         mEd: "Yes (71.60%)",
-        maEd: "M.A. Education (68.75%)",
-        masterSubject: "M.A. Bengali (57.37%)",
+        maEd: "Yes (68.75%)",
+        masterSubject: "Bengali (57.37%)",
         phd: "No",
         netSet: "Yes (SET)"
       },
@@ -320,20 +320,20 @@ const SVCE_DATA = {
       recognizedExp: "02 Years",
       initialAppt: "13/10/2023",
       joiningDate: "13/10/2023",
-      bio: "WB SET qualified language educator fostering Bengali literary appreciation, grammar, and communicative methods.",
-      avatar: "fa-book-bookmark"
+      bio: "SET qualified Assistant Professor in Bengali.",
+      avatar: "fa-book-open-reader"
     },
     {
       slNo: 12,
       name: "Sk Soriotulla",
       dob: "06/06/1995",
-      age: "30 Y 8M",
+      age: "30Y 8M",
       category: "OBC-A",
       designation: "Assistant Professor",
       type: "Regular",
       qualifications: {
-        bEd: "B.P.Ed (73.37%)",
-        mEd: "M.P.Ed (67.59%)",
+        bEd: "B.P.Ed. (73.37%)",
+        mEd: "M.P.Ed. (67.59%)",
         maEd: "No",
         masterSubject: "No",
         phd: "No",
@@ -344,38 +344,38 @@ const SVCE_DATA = {
       recognizedExp: "02 Years",
       initialAppt: "27/09/2023",
       joiningDate: "05/10/2023",
-      bio: "WB SET qualified sports and wellness director managing athletics, yogic exercises, and physical conditioning.",
+      bio: "SET qualified Assistant Professor in Health & Physical Education.",
       avatar: "fa-person-running"
     },
     {
       slNo: 13,
       name: "Indranil Sarkar",
       dob: "15/02/1989",
-      age: "36 Y 11M",
+      age: "36Y 11M",
       category: "GEN",
       designation: "Librarian",
       type: "Regular",
       qualifications: {
-        bEd: "B.LIS (68.12%)",
-        mEd: "M.LIS (63.50%)",
+        bEd: "BLIS (68.12%)",
+        mEd: "MLIS (63.5%)",
         maEd: "No",
         masterSubject: "No",
         phd: "No",
-        netSet: "Yes (UGC NET)"
+        netSet: "Yes (NET)"
       },
       subject: "Librarian",
       experience: "02 Years",
       recognizedExp: "02 Years",
       initialAppt: "03/10/2023",
       joiningDate: "05/10/2023",
-      bio: "UGC NET certified librarian overseeing college library digitization, automated cataloguing, and e-journal portals.",
-      avatar: "fa-book"
+      bio: "UGC NET qualified Librarian.",
+      avatar: "fa-book-bookmark"
     },
     {
       slNo: 14,
       name: "Jayita Sahu",
       dob: "19/07/1988",
-      age: "37 Y 6M",
+      age: "37Y 6M",
       category: "GEN",
       designation: "Assistant Professor",
       type: "Regular",
@@ -383,48 +383,49 @@ const SVCE_DATA = {
         bEd: "Yes (91.55%)",
         mEd: "Yes (73.95%)",
         maEd: "No",
-        masterSubject: "M.A. Rabindra Sangeet (62.62%)",
+        masterSubject: "Rabindra Sangeet (62.62%)",
         phd: "No",
-        netSet: "Yes (UGC NET)"
+        netSet: "Yes (NET)"
       },
       subject: "Performing Art",
       experience: "1.5 Years",
       recognizedExp: "1.5 Years",
       initialAppt: "28/03/2024",
       joiningDate: "01/04/2024",
-      bio: "UGC NET qualified performing arts educator leading cultural heritage, theatrical techniques, and Rabindra Sangeet.",
+      bio: "UGC NET qualified Assistant Professor in Performing Art.",
       avatar: "fa-music"
     },
     {
       slNo: 15,
       name: "Harekrishna Som",
       dob: "03/08/1974",
-      age: "51 Y 6M",
+      age: "51Y 6M",
       category: "GEN",
       designation: "Assistant Professor",
       type: "Regular",
       qualifications: {
-        bEd: "Yes (64.30%)",
+        bEd: "Yes (64.3%)",
         mEd: "Yes (69.13%)",
         maEd: "No",
-        masterSubject: "M.Sc. Mathematics",
+        masterSubject: "Mathematics (N/A %)",
         phd: "No",
-        netSet: "Yes (UGC NET)"
+        netSet: "Yes (NET)"
       },
       subject: "Mathematics",
       experience: "1.5 Years",
       recognizedExp: "1.5 Years",
       initialAppt: "28/03/2024",
       joiningDate: "01/04/2024",
-      bio: "UGC NET qualified mathematics pedagogue with extensive expertise in mathematical logic, diagnostic testing, and analytics.",
+      bio: "UGC NET qualified Assistant Professor in Mathematics.",
       avatar: "fa-square-root-variable"
     }
   ],
 
-  // D.El.Ed Certified Staff Members (Session 2024-2026 / ERCAPP77 / WBBPE Affiliated) - Total 10 Members
+  // D.El.Ed Certified Staff Members - Total 10 Members (Single Source of Truth)
   deledFaculty: [
     {
-      slNo: 1,
+      slNo: "I.A (1)",
+      section: "Principal / HOD (As Per NCTE Norms, 2014)",
       name: "Subhas Chandra Maity",
       dob: "01/10/1980",
       age: "43 Years",
@@ -435,7 +436,7 @@ const SVCE_DATA = {
         bEd: "Yes (63.72%)",
         mEd: "Yes (70.50%)",
         maEd: "No",
-        masterSubject: "M.Sc. Environmental Science (64.25%)",
+        masterSubject: "Yes (64.25%)",
         phd: "No",
         netSet: "No"
       },
@@ -444,11 +445,12 @@ const SVCE_DATA = {
       recognizedExp: "Swami Vibekananda College of Education",
       initialAppt: "22/07/2024",
       joiningDate: "23/07/2024",
-      bio: "Principal (Regular) heading institutional administration and teacher training with 10 years of dedicated experience.",
-      avatar: "fa-user-tie"
+      bio: "Principal (Regular) with 10 Years teaching experience at Swami Vibekananda College of Education.",
+      avatar: "fa-graduation-cap"
     },
     {
-      slNo: 2,
+      slNo: "I.B (1)",
+      section: "Lecturers / Teaching Staff (As Per NCTE Norms, 2014)",
       name: "Partha Sarathi Das",
       dob: "24/12/1981",
       age: "42 Years",
@@ -459,7 +461,7 @@ const SVCE_DATA = {
         bEd: "Yes (68.10%)",
         mEd: "Yes (68.42%)",
         maEd: "No",
-        masterSubject: "M.A. Bengali (69.00%)",
+        masterSubject: "Bengali (69.00%)",
         phd: "No",
         netSet: "No"
       },
@@ -468,11 +470,12 @@ const SVCE_DATA = {
       recognizedExp: "No",
       initialAppt: "22/07/2024",
       joiningDate: "23/07/2024",
-      bio: "Lecturer in Bengali language pedagogy, regional literature, and communicative classroom practices.",
+      bio: "Lecturer in Bengali language pedagogy and communicative classroom practices.",
       avatar: "fa-book-open-reader"
     },
     {
-      slNo: 3,
+      slNo: "I.B (2)",
+      section: "Lecturers / Teaching Staff (As Per NCTE Norms, 2014)",
       name: "Samaresh Ojha",
       dob: "24/11/1980",
       age: "43 Years",
@@ -483,7 +486,7 @@ const SVCE_DATA = {
         bEd: "Yes (60.80%)",
         mEd: "Yes (58.70%)",
         maEd: "No",
-        masterSubject: "M.A. English (52.20%)",
+        masterSubject: "Yes (52.20%)",
         phd: "No",
         netSet: "No"
       },
@@ -492,11 +495,12 @@ const SVCE_DATA = {
       recognizedExp: "Swami Vibekananda College of Education",
       initialAppt: "22/07/2024",
       joiningDate: "23/07/2024",
-      bio: "Lecturer focusing on communicative English methodologies, phonetics, and interactive language acquisition.",
+      bio: "Lecturer in English with 8 Years teaching experience at Swami Vibekananda College of Education.",
       avatar: "fa-chalkboard-user"
     },
     {
-      slNo: 4,
+      slNo: "I.B (3)",
+      section: "Lecturers / Teaching Staff (As Per NCTE Norms, 2014)",
       name: "Narayan Chandra Sasmal",
       dob: "07/01/1974",
       age: "50 Years",
@@ -507,20 +511,21 @@ const SVCE_DATA = {
         bEd: "Yes (56.50%)",
         mEd: "Yes (57.66%)",
         maEd: "No",
-        masterSubject: "M.A. History & Env. Science (55.25%)",
+        masterSubject: "Yes (55.25%)",
         phd: "No",
         netSet: "No"
       },
-      subject: "History & Environmental Science",
+      subject: "History / Environmental Science",
       experience: "8 Years",
       recognizedExp: "Swami Vibekananda College of Education",
       initialAppt: "22/07/2024",
       joiningDate: "23/07/2024",
-      bio: "Expertise in history and environmental studies pedagogy with 8 years of institutional experience at SVCE.",
+      bio: "Lecturer in History / Environmental Science with 8 Years teaching experience.",
       avatar: "fa-landmark"
     },
     {
-      slNo: 5,
+      slNo: "I.B (4)",
+      section: "Lecturers / Teaching Staff (As Per NCTE Norms, 2014)",
       name: "Aparna Sarkar (Das)",
       dob: "26/12/1981",
       age: "42 Years",
@@ -530,21 +535,22 @@ const SVCE_DATA = {
       qualifications: {
         bEd: "Yes (65.00%)",
         mEd: "No",
-        maEd: "M.A. Education (68.13%)",
+        maEd: "Yes (68.13%)",
         masterSubject: "No",
         phd: "No",
         netSet: "No"
       },
       subject: "Foundation",
-      experience: "-",
-      recognizedExp: "-",
+      experience: "No",
+      recognizedExp: "No",
       initialAppt: "22/07/2024",
       joiningDate: "23/07/2024",
-      bio: "Specialist in foundational pedagogical principles, educational psychology, and child development philosophy.",
+      bio: "Lecturer in Foundation education.",
       avatar: "fa-brain"
     },
     {
-      slNo: 6,
+      slNo: "I.B (5)",
+      section: "Lecturers / Teaching Staff (As Per NCTE Norms, 2014)",
       name: "Birendra Nath Maity",
       dob: "14/06/1984",
       age: "39 Years",
@@ -555,48 +561,50 @@ const SVCE_DATA = {
         bEd: "Yes (66.50%)",
         mEd: "Yes (68.50%)",
         maEd: "No",
-        masterSubject: "M.Sc. Science (57.90%)",
+        masterSubject: "Yes (57.90%)",
         phd: "No",
         netSet: "No"
       },
       subject: "Science",
-      experience: "-",
-      recognizedExp: "-",
+      experience: "No",
+      recognizedExp: "No",
       initialAppt: "22/07/2024",
       joiningDate: "23/07/2024",
-      bio: "Science pedagogue instructing laboratory demonstration techniques and hands-on primary science activities.",
-      avatar: "fa-flask"
+      bio: "Lecturer in Science pedagogy.",
+      avatar: "fa-dna"
     },
     {
-      slNo: 7,
+      slNo: "I.B (6)",
+      section: "Lecturers / Teaching Staff (As Per NCTE Norms, 2014)",
       name: "Harekrishna Som",
       dob: "03/08/1974",
       age: "49 Years",
-      category: "OBC-B",
+      category: "General",
       designation: "Lecturer (Regular)",
       type: "Regular",
       qualifications: {
         bEd: "Yes (64.30%)",
         mEd: "Yes (69.13%)",
         maEd: "No",
-        masterSubject: "M.Sc. Mathematics (58.30%)",
+        masterSubject: "Yes (58.30%)",
         phd: "No",
         netSet: "No"
       },
       subject: "Mathematics",
-      experience: "-",
-      recognizedExp: "-",
+      experience: "No",
+      recognizedExp: "No",
       initialAppt: "22/07/2024",
       joiningDate: "23/07/2024",
-      bio: "Mathematics educator emphasizing fundamental numeric logic, diagnostic assessment, and analytical thinking.",
+      bio: "Lecturer in Mathematics.",
       avatar: "fa-square-root-variable"
     },
     {
-      slNo: 8,
+      slNo: "I.B (7)",
+      section: "Lecturers / Teaching Staff (As Per NCTE Norms, 2014)",
       name: "Malay Kumar Shee",
       dob: "20/08/1989",
       age: "34 Years",
-      category: "General",
+      category: "OBC-B",
       designation: "Librarian",
       type: "Regular",
       qualifications: {
@@ -607,16 +615,17 @@ const SVCE_DATA = {
         phd: "No",
         netSet: "No"
       },
-      subject: "Librarian",
-      experience: "-",
-      recognizedExp: "-",
+      subject: "No",
+      experience: "No",
+      recognizedExp: "No",
       initialAppt: "22/07/2024",
       joiningDate: "23/07/2024",
-      bio: "College librarian managing pedagogical reference volumes, textbook inventory, and digital catalogue resources.",
+      bio: "College Librarian managing library resources.",
       avatar: "fa-book-bookmark"
     },
     {
-      slNo: 9,
+      slNo: "II (1)",
+      section: "Existing Lecturers / Teaching Staff (As Per NCTE Norms, 2009)",
       name: "Tapas Kumar Santra",
       dob: "11/01/1974",
       age: "50 Years",
@@ -631,16 +640,17 @@ const SVCE_DATA = {
         phd: "No",
         netSet: "No"
       },
-      subject: "Physical & Health Education",
+      subject: "Health & Physical Education",
       experience: "6 Years",
       recognizedExp: "6 Years",
       initialAppt: "07/12/2017",
       joiningDate: "08/12/2017",
-      bio: "Physical education instructor organizing sports, yoga conditioning, physical fitness, and health education.",
+      bio: "Lecturer in Health & Physical Education with 6 Years experience.",
       avatar: "fa-person-running"
     },
     {
-      slNo: 10,
+      slNo: "II (2)",
+      section: "Existing Lecturers / Teaching Staff (As Per NCTE Norms, 2009)",
       name: "Jayita Sahu",
       dob: "19/07/1988",
       age: "35 Years",
@@ -651,7 +661,7 @@ const SVCE_DATA = {
         bEd: "No",
         mEd: "No",
         maEd: "No",
-        masterSubject: "M.A. Performing Arts (62.62%)",
+        masterSubject: "Yes (62.62%)",
         phd: "No",
         netSet: "No"
       },
@@ -660,8 +670,8 @@ const SVCE_DATA = {
       recognizedExp: "10 Years",
       initialAppt: "08/09/2013",
       joiningDate: "09/09/2013",
-      bio: "Directs aesthetic education, performing arts, drama in education, and cultural programs with 10 years at SVCE.",
-      avatar: "fa-palette"
+      bio: "Lecturer in Performing Arts with 10 Years teaching experience.",
+      avatar: "fa-music"
     }
   ],
 
