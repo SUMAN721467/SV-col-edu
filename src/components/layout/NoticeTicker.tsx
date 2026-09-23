@@ -11,7 +11,9 @@ export const NoticeTicker: React.FC<NoticeTickerProps> = ({ onNavigate }) => {
   // Combine custom announcements and official notice titles
   const tickerItems = announcements.length > 0 
     ? announcements 
-    : notices.map(n => `[${n.badge}] ${n.title} (${n.date})`);
+    : (notices.length > 0 
+        ? notices.map(n => `[${n.badge}] ${n.title} (${n.date})`)
+        : ["Swami Vibekananda College of Education (SVCE) — Recognized by NCTE & Affiliated to BSAEU & WBBPE"]);
 
   return (
     <div className="bg-gold-bg border-b border-gold-border flex flex-col sm:flex-row items-stretch overflow-hidden min-h-[40px]">

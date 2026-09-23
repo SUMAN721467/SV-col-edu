@@ -1,17 +1,17 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-// Read from Vite environment variables (from .env file)
+// Read from Vite environment variables (with live SVCE project fallback)
 const supabaseUrl = 
   import.meta.env.VITE_SUPABASE_URL || 
   import.meta.env.SUPABASE_URL || 
-  'https://YOUR_PROJECT_ID.supabase.co';
+  'https://jyemhebaheytkqomsfcy.supabase.co';
 
 const supabaseKey = 
   import.meta.env.VITE_SUPABASE_ANON_KEY || 
   import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || 
   import.meta.env.SUPABASE_ANON_KEY || 
   import.meta.env.SUPABASE_PUBLISHABLE_KEY || 
-  'YOUR_SUPABASE_ANON_KEY';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp5ZW1oZWJhaGV5dGtxb21zZmN5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk5ODU0NjksImV4cCI6MjEwNTU2MTQ2OX0.y8oD3o-pM5MGzr_p8MazYOG5AF517rLjPeXmA2-JkvU';
 
 export const isSupabaseConfigured = (): boolean => {
   return (

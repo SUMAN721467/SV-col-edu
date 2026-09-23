@@ -164,8 +164,8 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     try {
       // 1. Fetch Students
-      const { data: dbStudents } = await supabase.from('students').select('*').order('sr_no', { ascending: true });
-      if (dbStudents && dbStudents.length > 0) {
+      const { data: dbStudents, error: errStudents } = await supabase.from('students').select('*').order('sr_no', { ascending: true });
+      if (!errStudents && Array.isArray(dbStudents)) {
         const formattedStudents: StudentRecord[] = dbStudents.map((s, idx) => ({
           srNo: s.sr_no || idx + 1,
           appId: s.app_id,
@@ -178,8 +178,8 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
 
       // 2. Fetch Faculty
-      const { data: dbFaculty } = await supabase.from('faculty').select('*').order('sl_no', { ascending: true });
-      if (dbFaculty && dbFaculty.length > 0) {
+      const { data: dbFaculty, error: errFaculty } = await supabase.from('faculty').select('*').order('sl_no', { ascending: true });
+      if (!errFaculty && Array.isArray(dbFaculty)) {
         const bedList: FacultyMember[] = [];
         const deledList: FacultyMember[] = [];
 
@@ -220,17 +220,17 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
           }
         });
 
-        if (bedList.length > 0) setBedFaculty(bedList);
-        if (deledList.length > 0) setDeledFaculty(deledList);
+        setBedFaculty(bedList);
+        setDeledFaculty(deledList);
       }
 
       // 3. Fetch Notices
-      const { data: dbNotices } = await supabase.from('notices').select('*').order('id', { ascending: false });
-      if (dbNotices && dbNotices.length > 0) {
+      const { data: dbNotices, error: errNotices } = await supabase.from('notices').select('*').order('id', { ascending: false });
+      if (!errNotices && Array.isArray(dbNotices)) {
         const formattedNotices: Notice[] = dbNotices.map((n, idx) => ({
           id: n.id || idx + 1,
-          subject: n.subject || n.badge || 'General',
-          badge: n.subject || n.badge || 'General',
+          subject: n.badge || n.subject || 'General',
+          badge: n.badge || n.subject || 'General',
           title: n.title,
           date: n.date,
           link: n.link,
@@ -243,14 +243,14 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
 
       // 4. Fetch Announcements
-      const { data: dbAnnouncements } = await supabase.from('announcements').select('*').order('id', { ascending: false });
-      if (dbAnnouncements && dbAnnouncements.length > 0) {
+      const { data: dbAnnouncements, error: errAnnouncements } = await supabase.from('announcements').select('*').order('id', { ascending: false });
+      if (!errAnnouncements && Array.isArray(dbAnnouncements)) {
         setAnnouncements(dbAnnouncements.map(a => a.text));
       }
 
       // 5. Fetch Mandatory Disclosure Documents
-      const { data: dbDocs } = await supabase.from('mandatory_disclosure').select('*').order('sr_no', { ascending: true });
-      if (dbDocs && dbDocs.length > 0) {
+      const { data: dbDocs, error: errDocs } = await supabase.from('mandatory_disclosure').select('*').order('sr_no', { ascending: true });
+      if (!errDocs && Array.isArray(dbDocs)) {
         const formattedDocs: OfficialDocument[] = dbDocs.map((d, idx) => ({
           id: d.id || `doc-${idx + 1}`,
           srNo: d.sr_no || idx + 1,
@@ -274,8 +274,27 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, []);
 
+  // Fetch immediately on mount and set up Realtime DB sync
   useEffect(() => {
     fetchFromSupabase();
+
+    if (!supabase || !isSupabaseConfigured()) return;
+
+    // Realtime channel for live sync across all tabs, incognito mode & devices
+    const channel = supabase
+      .channel('public-db-realtime-changes')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public' },
+        () => {
+          fetchFromSupabase();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, [fetchFromSupabase]);
 
   // Push All Teachers to Supabase
@@ -796,7 +815,10 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     if (supabase && isSupabaseConfigured() && noticeToDelete) {
       try {
-        await supabase.from('notices').delete().eq('title', noticeToDelete.title);
+        const { error } = await supabase.from('notices').delete().eq('id', id);
+        if (error) {
+          await supabase.from('notices').delete().eq('title', noticeToDelete.title);
+        }
       } catch (err) {
         console.warn('Supabase notice delete notice:', err);
       }

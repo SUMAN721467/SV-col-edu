@@ -172,20 +172,26 @@ export const Notices: React.FC<NoticesProps> = ({ onNavigate }) => {
 
           {/* Notices Grid / Feed */}
           {filteredNotices.length === 0 ? (
-            <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center space-y-3">
+            <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center space-y-3 shadow-xs">
               <div className="w-16 h-16 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto text-2xl">
                 <i className="fa-solid fa-clipboard-question"></i>
               </div>
-              <h3 className="font-heading font-bold text-navy text-lg">No notices match your filter</h3>
+              <h3 className="font-heading font-bold text-navy text-lg">
+                {notices.length === 0 ? 'No Notices Currently Published' : 'No notices match your filter'}
+              </h3>
               <p className="text-xs sm:text-sm text-slate-500 max-w-md mx-auto">
-                Try clearing your search query or selecting "All Notices" to view the complete institutional archive.
+                {notices.length === 0 
+                  ? 'Official notices and circulars will be listed here in real-time as published by the administration.' 
+                  : 'Try clearing your search query or selecting "All Subjects" to view published circulars.'}
               </p>
-              <button
-                onClick={() => { setSearchTerm(''); setCategoryFilter('ALL'); }}
-                className="btn-gold text-xs px-4 py-2"
-              >
-                Reset Filters
-              </button>
+              {notices.length > 0 && (searchTerm || categoryFilter !== 'ALL') && (
+                <button
+                  onClick={() => { setSearchTerm(''); setCategoryFilter('ALL'); }}
+                  className="btn-gold text-xs px-4 py-2 mt-2"
+                >
+                  Reset Filters
+                </button>
+              )}
             </div>
           ) : (
             <div className="space-y-4">

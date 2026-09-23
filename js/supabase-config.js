@@ -4,8 +4,8 @@
  */
 
 window.SUPABASE_CONFIG = {
-  url: 'https://YOUR_PROJECT_ID.supabase.co',
-  anonKey: 'YOUR_SUPABASE_ANON_KEY'
+  url: 'https://jyemhebaheytkqomsfcy.supabase.co',
+  anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp5ZW1oZWJhaGV5dGtxb21zZmN5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk5ODU0NjksImV4cCI6MjEwNTU2MTQ2OX0.y8oD3o-pM5MGzr_p8MazYOG5AF517rLjPeXmA2-JkvU'
 };
 
 window.supabaseClient = null;
